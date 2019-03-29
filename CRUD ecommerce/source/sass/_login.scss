@@ -1,0 +1,79 @@
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: $darkBlue;
+        padding: em(20);
+        border-radius: em(5) em(5) 0 0;
+        h1, p {
+            color: white;
+            text-align: center;
+        }
+    }
+    &__form {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: $white;
+        padding: em(30);
+        border-radius: 0 0 em(5) em(5);
+        .input-field {
+            margin-bottom: em(20);
+            label {
+                display: block;
+                font-size: em(15);
+                @include FontDemi;
+                margin-bottom: em(20);
+            }
+            input {
+                max-width: 80%;
+                min-width: em(300);
+                border-width: 0 0 1px 1px;
+                border-color: $mediumGrey;
+                padding: em(10);
+                font-size: em(13);
+            }
+        }
+        .loginButton {
+            border: none;
+            padding: em(15);
+            border-radius: em(5);
+            width: 20%;
+            min-width: em(100);
+            color: $white;
+            @include FontDemi;
+            cursor: pointer;
+            background-color: $mint;
+        }
+        #error {
+            text-align: center;
+            color: $orange;
+        }
+    }
+}
+
+@media #{$tablet} {
+    .login {
+        &__form {
+            .loginButton {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media #{$mobile} {
+    .login {
+        &__form {
+            .loginButton {
+                width: 100%;
+            }
+        }
+    }
+}

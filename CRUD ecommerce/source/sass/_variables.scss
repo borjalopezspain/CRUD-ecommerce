@@ -1,0 +1,20 @@
+$skyBlue: #0081be;
+$darkBlue: #354b85;
+$lightBlue: #049DE6;
+$lighterBlue: #78CFDE;
+$teal: #20cad2;
+$mint: #00c09a;
+$orange:#ff7400;
+$grey: #424452;
+$mediumGrey: #4A4B59;
+$lightGrey: #f4f4f4;
+$white: #ffffff;
+
+$columns-num: 6;
+
+/* Responsive */
+$mobile: 'only screen and (min-device-width : 320px) and (max-device-width : 480px)';
+$tablet: 'only screen and (min-device-width : 768px) and (max-device-width : 1024px)';
+$tablet-landscape: 'only screen and (min-device-width : 768px) and (max-device-width : 1024px)';
+$desktop: 'only screen and (min-width: 1200px)';
+$ie: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)';

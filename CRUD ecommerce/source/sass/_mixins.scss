@@ -1,0 +1,66 @@
+$fallbackfonts: sans-serif;
+
+@mixin FontLight {
+    font-family: 'OpenSans-light', $fallbackfonts;
+    font-weight: 300;
+}
+
+@mixin FontLightItalic {
+    font-family: 'OpenSans-light-italic', $fallbackfonts;
+    font-weight: 300;
+}
+
+@mixin FontNormal {
+    font-family: 'OpenSans-regular', $fallbackfonts;
+    font-weight: 400;
+}
+
+@mixin FontNormalItalic {
+    font-family: 'OpenSans-regular-italic', $fallbackfonts;
+    font-weight: 400;
+}
+
+@mixin FontDemi {
+    font-family: 'OpenSans-semibold', $fallbackfonts;
+    font-weight: 600;
+}
+
+@mixin FontDemiItalic {
+    font-family: 'OpenSans-semibold-italic', $fallbackfonts;
+    font-weight: 600;
+}
+
+@mixin FontBold {
+    font-family: 'OpenSans-bold', $fallbackfonts;
+    font-weight: 700;
+}
+
+@mixin FontBoldItalic {
+    font-family: 'OpenSans-bold-italic', $fallbackfonts;
+    font-weight: 700;
+}
+
+@mixin FontExtraBold {
+    font-family: 'OpenSans-extra-bold', $fallbackfonts;
+    font-weight: 800;
+}
+
+@mixin FontExtraBoldItalic {
+    font-family: 'OpenSans-extra-bold-italic', $fallbackfonts;
+    font-weight: 800;
+}
+
+
+$browser-default-size: 16; // Default
+
+@function em($pixels, $context: $browser-default-size) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin background($imagename, $position:0 0, $repeat: no-repeat, $size: cover, $bg-color: transparent) {
+	background-image: url(../images/#{$imagename});
+	background-position: $position;
+    background-repeat: $repeat;
+    background-size: $size;
+    background-color: $bg-color;
+}

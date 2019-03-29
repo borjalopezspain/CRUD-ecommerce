@@ -1,0 +1,80 @@
+.new-product {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $darkBlue;
+        padding: em(20);
+        border-radius: em(5) em(5) 0 0;
+        h1 {
+            color: white;
+        }
+    }
+    &__info {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-color: $white;
+        padding: em(30);
+        .info-container {
+            h3 {
+                background-color: $lightGrey;
+                padding: em(10);
+                font-size: em(12);
+            }
+        }
+        input, textarea, select {
+            padding: em(10);
+            min-width: 50%;
+            border-width: 0 0 1px 1px;
+            border-color: $mediumGrey;
+        }
+        input{
+            text-align: center;
+        }
+        select {
+            text-align-last: center;
+            padding-right: 0;
+            padding-left: em(15);
+        }
+    }
+    .product-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: em(20);
+        button {
+            border: none;
+            padding: em(15);
+            border-radius: em(5);
+            width: 20%;
+            min-width: em(100);
+            color: $white;
+            @include FontDemi;
+            cursor: pointer;
+        }
+        .goBack {  
+            background-color: $orange;
+        }
+        .save {
+            background-color: $mint;
+        }
+        .modify {
+            background-color: $teal;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .new-product {
+        &__info {
+            input, textarea, select {
+                min-width: 80%;
+            }
+        }
+    }
+}

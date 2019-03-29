@@ -1,0 +1,126 @@
+.product-admin {
+    display: flex;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $darkBlue;
+        padding: em(20);
+        border-radius: em(5) em(5) 0 0;
+        h1 {
+            color: white;
+        }
+        .add {
+            background-color: $orange;
+            color: white;
+            padding: em(10) em(20) em(10) em(30);
+            border: none;
+            @include FontDemi;
+            border-radius: em(5);
+            cursor: pointer;
+            span {
+                display: block;
+                position: relative;
+                &:after {
+                    content: '';
+                    width: em(18);
+                    height: em(18);
+                    @include background('add.svg');
+                    display: block;
+                    position: absolute;
+                    top: em(2);
+                    left: em(-22);
+                }
+            }
+        }
+    }
+    &__items {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        padding: em(20);
+        border-radius: 0 0 em(5) em(5);
+        .items-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding-bottom: em(25);
+            padding-left: em(10);
+            li {
+                @include FontBold;
+                color: $darkBlue;
+                flex: 1;
+                &:nth-child(2) {
+                    flex: 2;
+                }
+            }
+        }
+        .items-products {
+            .product {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: em(15) 0;
+                border-bottom: 1px solid $grey;
+                color: $grey;
+                padding-left: em(10);
+                &:nth-child(odd) {
+                    background-color: $lightGrey;
+                }
+                & > li, ul {
+                    flex: 1;
+                }
+                & > li:nth-child(2) {
+                    flex: 2;
+                }
+                &__actions {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    button {
+                        border: none;
+                        padding: 0;
+                        width: em(20);
+                        height: em(20);
+                        cursor: pointer;
+                        &.info {    
+                            @include background('information.svg');
+                        }
+                        &.edit { 
+                            @include background('edit.svg');
+                        }
+                        &.delete {
+                            @include background('delete.svg');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media #{$mobile} {
+    .product-admin {
+        &__header {
+            flex-direction: column;
+            h1 {
+                margin-top: 0;
+            }
+        }
+        &__items {
+            .items-products {
+                .product {
+                    &__actions {
+                        flex-direction: column;
+                        button {
+                            margin: em(5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
