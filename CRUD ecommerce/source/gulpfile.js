@@ -7,6 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const foreach = require('gulp-foreach');
 const uglify = require('gulp-uglify');
 const watch = require('gulp-watch');
+const cleanCSS = require('gulp-clean-css');
 
 const webpackStream = require('webpack-stream');
 const webpack2 = require('webpack');
@@ -26,6 +27,7 @@ gulp.task('styles', () => {
         .pipe(postcss([
             autoprefixer()
         ]))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(sourcemaps.write('/'))
         .pipe(gulp.dest(`${BUILD_PATH}/styles`))
 });
